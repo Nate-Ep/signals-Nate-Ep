@@ -4,9 +4,12 @@
  */
 
 /**
- * Modified by:
+ * Modified by: Nathan Eppler
  * 
  * Brief summary of modifications:
+ * Modified the program to print "Recieved a signal" when the program experiences
+ * an interrupt signal (CTRL+C or kill -SIGINT <pid>). The program terminates
+ * on a kill signal (kill -SIGKILL <pid>)
  */
 
 
@@ -20,7 +23,7 @@
  */
 void handle_signal() {
     printf("Received a signal\n");
-    exit(1);
+    //exit(1); Commented out to not exit with SIGINT
 }
 
 int main() {
